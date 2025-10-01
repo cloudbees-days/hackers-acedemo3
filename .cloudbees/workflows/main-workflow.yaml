@@ -192,11 +192,6 @@ jobs:
 
             Running hackers-organized:${{ cloudbees.scm.sha }}
           format: MARKDOWN
-      - name: Register_deployed_artifact
-        with:
-          artifact-id: ${{ cloudbees.scm.sha }}
-          target-environment: DOW Production
-        uses: cloudbees-io/register-deployed-artifact@v2
     needs:
       - build-container-image
       - scan
